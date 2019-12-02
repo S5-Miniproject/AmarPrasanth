@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="{% url 'plc:loginclick' %}">
+  {% csrf_token %}
+  <div align="center">
+    <table width="400" border="0">
+      <tr>
+        <td width="91" height="31"><div align="center" style="color:black;"><strong>USERNAME</strong></div></td>
+        <td width="299"><div align="center">
+          <label for="textfield"></label>
+          <input type="text" name="textfield" id="textfield" required pattern="[A-Z a-z0-9]{4,25}"/>
+        </div></td>
+      </tr>
+      <tr>
+        <td><div align="center"></div></td>
+        <td><div align="center"></div></td>
+      </tr>
+      <tr>
+        <td height="32" ><div align="center" style="color:black;"><strong>PASSWORD</strong></div></td>
+        <td><div align="center">
+          <label for="textfield2"></label>
+          <input type="password" name="textfield2" required pattern="[A-Z a-z0-9]{4,25}" id="textfield2" />
+        </div></td>
+      </tr>
+      <tr>
+        <td><div align="center"></div></td>
+        <td><div align="center"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2"><div align="center">
+          <input type="submit" name="button" id="button" value="LOGIN" />
+        </div>        <div align="center"></div></td>
+      </tr>
+      <tr>
+      <td> </td>
+      </tr>
+      <tr>
+        <td height="48" colspan="2">
+          <div align="center"><u><a href="{% url 'plc:stregistration' %}">REGISTER AS NEW STUDENT</a></u></div>
+        </label></td>
+      </tr>
+      <td height="11"></tr>
+      </td>
+      <tr>
+        <td colspan="2"><div align="center"><u><a href="{% url 'plc:cmregister' %}">REGISTER AS NEW COMPANY</a></u></div>
+        <div align="center"></div></td>
+      </tr>
+    </table>
+  </div>
+</form>
+{% endblock %}

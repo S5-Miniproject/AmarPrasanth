@@ -1,0 +1,350 @@
+{% extends 'indexcompany (2).html' %}
+{% block body %}
+<div align="center">
+  <p style="color:black;"><font size="10"> ADD VACCANCY</font>
+  </p>
+  <form id="form1" name="form1" method="post" action="{% url 'plc:addvac' %}">
+    {% csrf_token %}
+    <table width="1015" height="241" border="0">
+      <tr>
+        <td colspan="2" style="color:black;">JOB TITLE</td>
+        <td><label for="textfield2"></label>
+        <input type="text" name="textfield" id="textfield2" required pattern="{A-Z},{a-z}/></td>
+      </tr>
+      <tr>
+        <td colspan="2"></td>
+        <td><label for="textfield3"></label></td>
+        <td><label for="select4"></label></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">JOB LOCATION</td>
+        <td><input type="text" name="textfield2" id="textfield3" required pattern="{A-Z},{a-z}"/></td>
+      </tr>
+      <tr>
+        <td colspan="2"></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">JOB TYPE </td>
+        <td><select name="select4" required>
+          <option value="">selected</option>
+          <option value="part_time">part time</option>
+          <option>full time</option>
+        </select></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">SALARY</td>
+        <td><input type="text" name="textfield3" required/></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">WORKING HOURS </td>
+        <td><select name="select5" required>
+		<option value="">selected</option>
+          <option>0 - 8</option>
+          <option>0-6</option>
+          <option>0-10</option>
+        </select>        </td>
+      </tr>
+      <tr>
+        <td colspan="3"><p>&nbsp;</p>
+          <p align="center" style="color:black;">REQUIREMENTS</p></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">QUALIFICATION</td>
+        <td><label for="select2"></label>
+          <p>
+            <select name="select2" id="select2" required>
+			<option value="">selected</option>
+              <option>DIPLOMA</option>
+              <option>GRADUATION</option>
+              <option> POST GRADUATION</option>
+              <option>10th</option>
+              <option>+2</option>
+            </select>
+          </p>        </td>
+      </tr>
+	  
+      <tr>
+        <td colspan="3">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="3"><table width="1008" border="1">
+          <tr>
+            <td width="153" style="color:black;">BRANCHS NEEDED </td>
+            <td width="183"><p><strong>MBA</strong></p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="MBA" checked="checked"/>
+                HR</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="MBA" />
+                FINANCE</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="MBA"  />
+                MARKETING</p>
+              <p><strong>BTECH</strong></p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="BTECH" />
+                MECHANICAL </p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="BTECH" />
+                CIVIL</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="BTECH" />
+                CS/IT</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="BTECH" />
+                EC</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="BTECH" />
+                EEE</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="BTECH" />
+                AERONOTICAL </p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="BTECH"/>
+                FOOD PROCESSING</p>
+              <p>&nbsp;</p>              </td>
+            <td width="228"><p><strong>MTECH</strong></p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="MTECH" />
+                CS/IT</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="MTECH" />
+                MECH</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="MTECH" />
+                CIVIL</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="MTECH" />
+                EC</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="MTECH" />
+                AERONOTICAL</p>
+              <p><strong>DIPLOMA COURCES</strong></p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="MTECH" />
+                ME </p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="MTECH" />
+                EE</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="MTECH" />
+                CE</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="MTECH" />
+                CS/IT</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="MTECH" />
+                PETROLEUM</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="MTECH" />
+              AUTOMOBILE</p></td>
+            <td width="416"><p>
+              <input type="checkbox" name="checkbox8" value="OTHERS" />
+              OTHER COURSES (BSC MSC COURCES INCLUDED) </p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="MCA"  />
+                MCA
+  <input type="checkbox" name="checkbox8" value="BBA" />
+                BBA
+  <input type="checkbox" name="checkbox8" value="BCA" />
+                BCA
+  <input type="checkbox" name="checkbox8" value="BCOM"/>
+              BCOM</p></td>
+          </tr>
+        </table></td>
+      </tr>
+      
+      
+      <tr>
+        <td colspan="2">&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">PERCENTAGE/SGPA</td>
+        <td><label for="select3"></label>
+          <label for="select6"></label>
+          <label for="select6"></label>
+          <select name="select6" id="select6" required>
+		  <option value="">selected</option>
+            <option>30 TO 40</option>
+          <option>40 TO 50</option>
+          <option>50 TO 60</option>
+          <option>60 TO 70</option>
+          <option>70 TO 80</option>
+          <option>80 TO 90</option>
+          <option>90 TO 100</option>
+          </select></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">YEAR OF PASSING</td>
+        <td><label for="select3"></label>
+          <select name="select3" id="select3" required>
+		  <option value="">selected</option>
+            <option>2010 - 2012</option>
+            <option>2012 - 2014</option>
+            <option>2014 - 2016</option>
+            <option>2016 - 2018</option>
+            <option>2019...</option>
+          </select></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">BACK LOGS</td>
+        <td><label for="select7"></label>
+          <select name="select7" id="select7" required>
+		  <option value="">selected</option>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>OTHERS</option>
+          </select></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">AGE GROUP</td>
+        <td><label for="select9"></label>
+          <select name="select9" id="select9" required>
+		  <option value="">selected</option>
+            <option>18-20</option>
+            <option>20-22</option>
+            <option>22-24</option>
+            <option>24-26</option>
+            <option>26-28</option>
+            <option>28-30</option>
+            <option>30-32</option>
+          </select></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">GENDER</td>
+        <td><select name="select14" required>
+		<option value="">selected</option>
+          <option>MALE</option>
+          <option>FEMALE</option>
+          <option>ANY</option>
+        </select>        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">MARITIAL STATUS </td>
+        <td><select name="select13" required>
+		<option value="">selected</option>
+          <option>YES</option>
+          <option>NO</option>
+        </select>        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">EXPERIENCE</td>
+        <td><label for="select8"></label>
+          <select name="select8" id="select8" required>
+		  <option value="">selected</option>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5+</option>
+          </select></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">LANGUAGE KNOWN</td>
+        <td><label for="select4"></label>
+          <select name="select99" id="select4" required>
+		  <option value="">selected</option>
+            <option>ENGLISH</option>
+            <option>HINDI</option>
+            <option>MALAYALAM</option>
+            <option>TAMIL</option>
+            <option>TELUGU</option>
+            <option>KANNADA</option>
+          </select>
+          <label for="select5"></label>
+          <select name="select98" id="select5" required>
+		  <option value="">selected</option>
+            <option>ENGLISH</option>
+            <option>MALAYALAM</option>
+            <option>HINDI</option>
+            <option>TAMIL</option>
+            <option>TELUGU</option>
+            <option>KANADA</option>
+          </select>
+          <label for="select6"></label></td>
+      </tr>
+      <tr>
+        <td colspan="3"><p>&nbsp;</p>
+        <p align="center" style="color:black;">PLACEMENT PROCESS </p></td>
+      </tr>
+      <tr>
+        <td colspan="3"><p align="left">&nbsp;</p>
+          <p align="left" style="color:black;">REQUIRED DOCUMENTS :  </p>
+          <p align="left" >
+            <input type="checkbox" name="checkbox12" value="ORIGINAL EDUCATION CERTIFICATES" checked="checked"/>
+            ORIGINAL EDUCATION CERTIFICATES </p>
+          <p align="left">
+            <input type="checkbox" name="checkbox12" value="PHOTO" />
+          PHOTO</p>
+          <p align="left">
+            <input type="checkbox" name="checkbox12" value="ID CARD" />
+          ID CARD </p>
+          <p align="left">
+            <input type="checkbox" name="checkbox12" value="PAN CARD" />
+          PAN CARD </p>
+          <p align="left">
+            <input type="checkbox" name="checkbox12" value="EXPERIENCE CERTIFICATES (IF AVAILABLE)" />
+          EXPERIENCE CERTIFICATES (IF AVAILABLE)</p>
+          <p align="left">
+            <input type="checkbox" name="checkbox12" value="OTHER COURSE CERTIFICATES (IF ANY)" />
+            OTHER COURSE CERTIFICATES (IF ANY)</p>          
+          <p align="left">&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td width="218" style="color:black;">CONDUCTING DATE </td>
+        <td width="211"><label>
+          <input type="Date" name="textfield4" required/>
+        </label></td>
+        <td>TIME : 
+          <select name="select11" required>
+		  <option value="">selected</option>
+            <option>8.00 AM</option>
+            <option>9.00 AM</option>
+            <option>10.00 AM</option>
+            <option>11.00 AM</option>
+            <option>12.00 PM</option>
+            <option>1.00 PM</option>
+            <option>2.00 PM</option>
+            <option>3.00 PM</option>
+            <option>4.00 PM</option>
+            <option>5.00 PM</option>
+          </select></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><div align="center">
+          <p>&nbsp;            </p>
+          <p>
+            <input type="submit" name="Submit" value="Submit" />
+            </p>
+        </div></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </form>
+  <p>&nbsp;</p>
+</div>
+{% endblock %}

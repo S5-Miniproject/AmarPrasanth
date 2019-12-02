@@ -1,0 +1,80 @@
+{% extends 'indexadmins.html' %}
+{% block body %}
+<div align="center">
+  <p style="color:black;">REGISTRER COMPANY
+  </p>
+  <p>&nbsp;</p>
+</div>
+<form action="{% url 'plc:cmpver' data.cmid %}" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  {% csrf_token %}
+  <div align="center">
+    <table width="670" border="0">
+      <tr>
+        <td colspan="2"><div align="center">
+          <p>&nbsp;</p>
+          <p style="color:black;">COMPANY DETAILS</p>
+        </div></td>
+      </tr>
+      <tr>
+        <td width="287">COMPANY NAME :</td>
+        <td width="373" style="color:black;">
+       {{data.cname}} </td>
+      </tr>
+      <tr>
+        <td style="color:black;">LOCATION ADDRESS:</td>
+        <td style="color:black;">{{data.caddress}} </textarea></td>
+      </tr>
+      <tr>
+        <td style="color:black;">CITY :</td>
+        <td style="color:black;">{{data.ccity}}</td>
+      </tr>
+      <tr>
+        <td style="color:black;">STATE :</td>
+        <td style="color:black;">{{data.cstate}}</td>
+      </tr>
+      <tr>
+        <td style="color:black;">COMPANY NUMBER:</td>
+        <td style="color:black;">{{data.ccmpno}}</td>
+      </tr>
+      <tr>
+        <td style="color:black;">EMAIL ID :</td>
+        <td style="color:black;">{{data.cemail}}</td>
+      </tr>
+      <tr>
+        <td colspan="2"><div align="center">
+          <p>&nbsp;</p>
+          <p>CONTACT PERSON DETAILS</p>
+        </div></td>
+      </tr>
+      <tr>
+        <td>CONTACT PERSONS NAME :</td>
+        <td>{{data.ccontactname}}</td>
+      </tr>
+      <tr>
+        <td style="color:black;">TITLE :</td>
+        <td>{{data.ctitle}}</td>
+      </tr>
+      <tr>
+        <td style="color:black;">CONTACT NUMBER FOR VERIFICATION :</td>
+        <td style="color:black;">{{data.ccontactname}}</td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+
+
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td ><label>
+          <div align="center">
+            <input type="submit" name="Submit" value="ACCEPT" />
+          </div>
+        </label></td>
+        <td><input type="submit" name="Submit" value="REJECT" /></td>
+      </tr>
+    </table>
+  </div>
+</form>
+{% endblock %}

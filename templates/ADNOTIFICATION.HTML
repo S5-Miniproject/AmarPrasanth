@@ -1,0 +1,50 @@
+{% extends 'indexadmins.html' %}
+{% block body %}
+<div align="center">
+  <p style="color:black;"><font size="10"> NOTIFICATION</font>
+  </p>
+  <p>&nbsp;</p>
+</div>
+<form id="form1" name="form1" method="post" action="{% url 'plc:sendnoti' %}">
+  {% csrf_token %}
+  <div align="center">
+    <table width="548" border="0">
+      <tr>
+        <td width="538"><p align="center">
+          <label for="textarea"></label>
+          ENTER MESSAGES HERE</p>
+          <p align="center">
+             <textarea name="textarea" id="textarea" cols="45" rows="5"></textarea>
+        </p></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><div align="center">
+          <label>
+          <select name="select">
+            <option>To Student</option>
+            <option>To Company</option>
+          </select>
+          </label>
+        </div></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><div align="center">
+          <label>
+          <input type="submit" name="Submit" value="Send" />
+          </label>
+        </div></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </div>
+  <div align="center"></div>
+</form>
+ {% endblock %}

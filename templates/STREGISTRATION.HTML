@@ -1,0 +1,161 @@
+{% extends 'index.html' %}
+{% block body %}
+
+  <p  align="center" style="color:black;"><font size="10"> <b>REGISTRATION </b></font></p>
+  <form action="{% url 'plc:registerstudd' %}" method="post" enctype="multipart/form-data" name="form1" id="form1">
+    {% csrf_token %}
+    <table width="591" height="1023" border="0">
+      <tr>
+        <th colspan="2" scope="row"  style="color:black;" ><div align="center">PERSONAL DETAILS </div></th>
+      </tr>
+      <tr>
+        <th width="289" height="30" style="color:black;" scope="row">FIRST NAME</th>
+        <td width="286"><input type="text" name="textfield" required pattern="[A-Z a-z]{3,25}" /></td>
+      </tr>
+      <tr>
+        <th height="31" style="color:black;" scope="row">MIDDLE NAME </th>
+        <td><input type="text" name="textfield2" /></td>
+      </tr>
+      <tr>
+        <th height="32" style="color:black;" scope="row">LAST NAME </th>
+        <td><input type="text" name="textfield3" required pattern="[A-Z a-z]{1,25}"/></td>
+      </tr>
+      <tr>
+        <th height="33" style="color:black;" scope="row">MAIL ID </th>
+        <td><input type="text" name="textfield4" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" /></td>
+      </tr>
+      <tr>
+        <th height="32" style="color:black;" scope="row">MOBILE NUMBER </th>
+        <td><input type="text" name="mob" required pattern="[789][0-9]{9}"/></td>
+      </tr>
+      <tr>
+        <th height="47" style="color:black;" scope="row">ADDRESS</th>
+        <td><textarea name="textarea1" required pattern="[A-Z a-z0-9]{6,25}"></textarea></td>
+      </tr>
+      <tr>
+        <th scope="row" style="color:black;">DATE OF BIRTH </th>
+        <td><input type="date" name="textfield6" required /></td>
+      </tr>
+      <tr>
+        <th height="32" style="color:black;" scope="row">GENDER</th>
+        <td>MALE
+        <input name="radiobutton" type="radio" required pattern="checked" value="male" />
+        FEMALE
+        <input name="radiobutton" type="radio" required pattern="checked" value="female" /></td>
+      </tr>
+      <tr>
+        <th scope="row" style="color:black;">NATIONALITY</th>
+        <td><select name="select4" required>
+		<option value="">select</option>
+          <option>INDIAN</option>
+          <option>FOREIGN</option>
+        </select>        </td>
+      </tr>
+      <tr>
+        <th scope="row" style="color:black;">MARITAL STATUS </th>
+        <td>MARRIED
+        <input name="radiobutton1" type="radio" required pattern="checked" value="married" />
+        UNMARRIED 
+        <input name="radiobutton1" type="radio" required pattern="checked" value="unmarried" /></td>
+      </tr>
+      <tr>
+        <th height="116" scope="row" style="color:black;">QUALIFICATION</th>
+        <td><select name="select2" id="select2" required>
+			<option value="">Select</option>
+          <option>DIPLOMA</option>
+          <option>GRADUATION</option>
+          <option value="POST_GRADUATION"> POST GRADUATION</option> 
+          <option>10th</option>
+          <option>+2</option>
+        </select></td>
+      </tr>
+      <tr>
+        <th height="116" scope="row" style="color:black;">LANGUAGES KNOWN </th>
+        <td><p>HINDI
+          <label>
+          <input type="checkbox" name="checkbox" value="ENGLISH" checked="checked" />
+          </label>
+          ENGLISH
+          <label>
+          <input type="checkbox" name="checkbox" value="HINDI"  />
+          </label>
+          MALAYALAM
+          <label>
+          <input type="checkbox" name="checkbox"  value="TAMIL" />
+          </label>
+          TAMIL
+          <label>
+          <input type="checkbox" name="checkbox"   value="TELUGU" />
+          </label>
+          TELUGU
+          <label>
+          <input type="checkbox" name="checkbox"   value="MALAYALAM"  />
+          </label>
+        </p>        </td>
+      </tr>
+      <tr>
+        <th scope="row" style="color:black;">PHOTO</th>
+        <td><label>
+          <input type="file" name="file" required/>
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row" style="color:black;">SIGNATURE</th>
+        <td><label>
+          <input type="file" name="file2" required/>
+        </label></td>
+      </tr>
+
+      <tr>
+        <th colspan="2" scope="row"><p>&nbsp;</p>
+        <p style="color:black;">OTHERS</p></th>
+      </tr>
+      <tr>
+        <th scope="row" style="color:black;">SKILLS</th>
+        <td><textarea name="textarea2" required pattern="[A-Z a-z]{3,25}"></textarea></td>
+      </tr>
+      <tr>
+        <th scope="row" style="color:black;">EXPERIENCE</th>
+        <td><select name="select13" required>
+		<option value="">select</option>
+          <option>0 - 1</option>
+          <option>1 - 2</option>
+          <option>2 - 3</option>
+          <option>3 - 4</option>
+          <option>5 +</option>
+        </select>        </td>
+      </tr>
+      <tr>
+        <th scope="row" style="color:black;">DECLARATION STATEMENT </th>
+        <td><textarea name="textarea3" required pattern="[A-Z a-z]{3,25}"></textarea></td>
+      </tr>
+      <tr>
+        <th colspan="2" scope="row">&nbsp;</th>
+      </tr>
+      <tr>
+        <th height="63" colspan="2" style="color:black;" scope="row"><div align="center">LOGIN</div></th>
+      </tr>
+      <tr>
+        <th height="30" style="color:black;" scope="row">USERNAME</th>
+        <th scope="row"><label>
+          <input type="text" name="textfield7" required pattern="[A-Z a-z0-9]{6,25}" />
+        </label></th>
+      </tr>
+      <tr>
+        <th scope="row"style="color:black;">PASSWORD</th>
+        <th scope="row"><label>
+          <input type="text" name="textfield8" required pattern="[A-Z a-z0-9]{6,25}" />
+        </label></th>
+      </tr>
+      <tr>
+        <th colspan="2" scope="row"><p>&nbsp;
+          </p>
+          <p>
+            <input type="submit" name="Submit" value="NEXT" />
+          </p></th>
+      </tr>
+    </table>
+    <label></label>
+    <p>&nbsp;</p>
+  </form>
+  {% endblock %}

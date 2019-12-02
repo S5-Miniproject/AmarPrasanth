@@ -1,0 +1,23 @@
+{% extends 'indexadmins.html' %}
+{% block body %}
+<div align="center" style="color:black;"><font size="10">VERIFICATIONS LIST</font>
+</div>
+<table width="1261" height="57" border="1">
+  <tr>
+    <td style="color:black;">NAME</td>
+    <td style="color:black;">LOCATION</td>
+    <td style="color:black;">TITLE</td>
+    <td style="color:black;">MOB</td>
+    <td style="color:black;">OTHERS</td>
+  </tr>
+    {% for dt in data %}
+  <tr>
+    <td style="color:black;">{{dt.cname}}</td>
+    <td style="color:black;">{{dt.caddress}}</td>
+    <td style="color:black;">{{dt.ctitle}}</td>
+    <td style="color:black;">{{dt.ccontactname}}</td>
+    <td style="color:black;"><a href="{% url 'plc:cmpverification' dt.cmid %}">VIEWMORE</a></td>
+  </tr>
+     {% endfor %}
+  </table>
+ {% endblock %}

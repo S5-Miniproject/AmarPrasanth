@@ -1,0 +1,134 @@
+{% extends 'index.html' %}
+{% block body %}
+
+  <p align="center" style="color:black;"><font size="10"> REGISTER COMPANY </font>  </p>
+  <form action="{% url 'plc:regcmp' %}" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  {% csrf_token %}
+  <div align="center">
+    <table width="670" border="0">
+      <tr>
+        <td colspan="2"><div align="center">
+          <p>&nbsp;</p>
+          <p style="color:black;"> <font size="5"> COMPANY DETAILS</font></p>
+        </div></td>
+      </tr>
+      <tr>
+        <td width="240" height="27" style="color:black;">COMPANY NAME </td>
+        <td width="420"><label for="textfield"></label>
+          <input type="text" name="textfield" id="textfield" required/></td>
+      </tr>
+      <tr>
+        <td style="color:black;">LOCATION ADDRESS</td>
+        <td><label for="textarea"></label>
+          <textarea name="textarea" id="textarea" cols="45" rows="5" required></textarea></td>
+      </tr>
+      <tr>
+        <td style="color:black;">CITY </td>
+        <td><label for="textfield2"></label>
+        <input type="text" name="textfield2" id="textfield2"  required/></td>
+      </tr>
+      <tr>
+        <td style="color:black;">STATE </td>
+        <td><label for="select"></label>
+          <select name="select" id="select" required>
+            <option value="">select</option>
+            <option>KERALA</option>
+            <option>TAMILNADU</option>
+            <option>DELHI</option>
+            <option>KARNATAKA</option>
+            <option>GUJRATH</option>
+        </select></td>
+      </tr>
+      <tr>
+        <td style="color:black;">COMPANY NUMBER</td>
+        <td><label for="textfield3"></label>
+        <input type="text" name="textfield3" id="textfield3" required /></td>
+      </tr>
+      <tr>
+        <td style="color:black;">EMAIL</td>
+        <td><input type="text" name="textfield4" required /></td>
+      </tr>
+      <tr>
+        <td colspan="2"></td>
+      </tr>
+      <tr>
+        <td height="65">&nbsp;</td>
+        <td><label for=" "></label>
+          <div align="center">
+          <p>&nbsp;</p>
+          <p align="left" style="color:black;">CONTACT PERSON DETAILS</p>
+          </div></td>
+      </tr>
+      <tr>
+        <td height="30" style="color:black;">CONTACT PERSONS NAME </td>
+        <td><label for="textfield5"></label>
+        <input type="text" name="textfield5" id="textfield5" required/></td>
+      </tr>
+      <tr>
+        <td height="33" style="color:black;">TITLE </td>
+        <td><label for="select2"></label>
+          <select name="select2" id="select2" required>
+            <option value="">selected</option>
+            <option>HR MANAGER</option>
+            <option>COMPANY OWNER</option>
+        </select></td>
+      </tr>
+      <tr>
+        <td style="color:black;">CONTACT NUMBER FOR VERIFICATION </td>
+        <td><label for="textfield6"></label>
+          <input type="text" name="textfield6" id="textfield6" required pattern="[789][0-9]{9}"/></td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2" ><div align="center">LOGIN</div></td>
+      </tr>
+      <tr>
+        <td height="33" style="color:black;">USERNAME</td>
+        <td><label>
+          <input type="text" name="textfield6" required pattern="[A-Z a-z0-9]{6,25}"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td style="color:black;">PASSWORD</td>
+        <td><label>
+          <input type="text" name="textfield8" required pattern="[A-Z a-z0-9]{6,25}"/>
+        </label></td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2">
+        <p align="center">&nbsp;</p>          <p align="center" style="color:black;">DECLERATION</p></td>
+      </tr>
+      <tr>
+        <td style="color:black;">SIGNATURE </td>
+        <td><label>
+          <input type="file" name="file" required/>
+        </label></td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">I  DECLARE THAT THE ABOVE DETAILS ARE TRUE IN BEST OF MY KNOWLEDGE.
+          <input type="checkbox" name="checkbox" id="checkbox" />
+            <label for="checkbox">HEREBY</label></td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2"><label>
+          <div align="center">
+            <input type="submit" name="Submit" value="Submit" />
+          </div>
+        </label></td>
+      </tr>
+    </table>
+  </div>
+</form>
+{% endblock %}
+

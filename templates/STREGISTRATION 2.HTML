@@ -1,0 +1,116 @@
+{% extends 'index.html' %}
+{% block body %}
+
+  <form id="form1" name="form1" method="post" action="{% url 'plc:studregister2' %}">
+    {% csrf_token %}
+    <p><strong style="color:black;">QUALIFICATION DETAILS </strong></p>
+    <table width="366" border="0">
+      <tr>
+        <td width="133"> <div align="center">Course</div></td>
+        <td width="223"><label>
+        <select name="select12" required>
+		<option value="">selected</option>
+          <option>SSLC</option>
+          <option>PLUSTWO</option>
+          <option>DEGREE</option>
+          <option>POST GRADUATION</option>
+          <option>DIPLOMA</option>
+        </select>
+        </label></td>
+      </tr>
+      <tr>
+        <td> <div align="center" style="color:black;">Branch</div></td>
+       
+		 <td><select name="select13" required>
+		 <option value="">selected</option>
+		  <option>NIL</option>
+           <option>SCIENCE</option>
+           <option>COMMERCE</option>
+           <option>HUMANTIES</option>
+          <option>BSC</option>
+          <option>BBA</option>
+          <option>BCA</option>
+          <option>B.TECH/EC</option>
+          <option>B.TECH/ME</option>
+          <option>B.TECH/CS</option>
+          <option>B.TECH/CE</option>
+          <option>B.TECH/AE</option>
+          <option>B.TECH/EEE</option>
+          <option>MBA/HR</option>
+          <option>MBA/MARKETING</option>
+          <option>MBA/FIN</option>
+          <option>MTECH/CS/IT</option>
+          <option>MTECH/ME</option>
+          <option>MTECH/CE</option>
+          <option>MTECH/EC</option>
+          <option>MTECH/AERNOTICAL</option>
+          <option>DIPOLMA/ME</option>
+          <option>DIPLOLMA/EE</option>
+          <option>DIPLOMA/IT</option>
+          <option>DIPLOMA/CE</option>
+          <option>DIPLOMA/PETROLEUM</option>
+          <option>DIPLOMA/FOOD PROCESSING</option>
+          <option>B.COM</option>
+          <option>MCA</option>
+          <option>MSC</option>
+          <option>M.COM</option>
+          
+        </select>        </td>
+      </tr>
+      </tr>
+        <div align="center"></div>
+      
+      <tr>
+        <td><div align="center" style="color:black;">Year of Passing </div></td>
+        <td><label>
+        <select name="select10" required>
+		<option value="">selected</option>
+          <option>2010 -2012</option>
+          <option>2012-2014</option>
+          <option>2014 -2016</option>
+          <option>2016 - 2018</option>
+          <option>2019...</option>
+        </select>
+        </label></td>
+      </tr>
+      <tr>
+        <td><div align="center" style="color:black;">Back logs </div></td>
+        <td><label>
+        <select name="select11" required>
+		<option value="">selected</option>
+          <option>0</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>OTHERS</option>
+        </select>
+        </label></td>
+      </tr>
+      <tr>
+        <td><div align="center" style="color:black;">PERCENTAGE</div></td>
+        <td><label>
+        <select name="select9" required>
+		<option value="">selected</option>
+          <option>30 TO 40</option>
+          <option>40 TO 50</option>
+          <option>50 TO 60</option>
+          <option>60 TO 70</option>
+          <option>70 TO 80</option>
+          <option>80 TO 90</option>
+          <option>90 TO 100</option>
+          </select>
+        </label></td>
+      </tr>
+    </table>
+    <p>
+      <label>
+      <input type="submit" name="Submit" value="NEXT" />
+      </label>
+      <input type="submit" name="Submit" value="FINISH" />
+    </p>
+  </form>
+  {% endblock %}

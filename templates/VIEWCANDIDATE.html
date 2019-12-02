@@ -1,0 +1,27 @@
+{% extends 'indexcompany (2).html' %}
+{% block body %}
+<table width="999" border="1">
+  <tr>
+    <td width="326" style="color:black;">NAME</td>
+    <td width="69" style="color:black;" >PLACE</td>
+    <td width="69" style="color:black;">MOB</td>
+    <td width="69" style="color:black;">EMAIL</td>
+    <td width="69" style="color:black;">QUALIFICATION</td>
+    <td width="69" style="color:black;">BACKLOG</td>
+    <td width="73" style="color:black;">EXPERIENCE</td>
+  </tr>
+  {% for dt in data %}
+  <tr>
+
+      <td style="color:black;">&nbsp;{{dt.stidd__sfirstname}}</td>
+      <td style="color:black;">{{dt.stidd__saddress}}&nbsp;</td>
+      <td style="color:black;">{{dt.stidd__snumber}}</td>
+      <td style="color:black;">&nbsp;{{dt.stidd__smail}}</td>
+      <td style="color:black;">&nbsp;{{dt.stidd__squalification}}</td>
+      <td style="color:black;">&nbsp;{{dt.stidd__login_idd}}</td>
+      <td style="color:black;">&nbsp;{{dt.stidd__studexperience}}</td>
+
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,330 @@
+{% extends 'indexcompany (2).html' %}
+{% block body %}
+<div align="center">
+  <p style="color:black;">ADD VACCANCY
+  </p>
+  <form id="form1" name="form1" method="post" action="{% url 'plc:update' data.cmid %}">
+    {% csrf_token %}
+    <table width="1015" height="241" border="0">
+      <tr>
+        <td colspan="2">JOB TITLE</td>
+        <td><label for="textfield2"></label>
+        <input type="text" name="textfield" id="textfield2"  value="{{data.cmtitle}}"/></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">JOB LOCATION</td>
+        <td><label for="textfield3"></label>
+          <input type="text" name="textfield2" id="textfield3" value="{{data.cmlocation}}"/></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">JOB TYPE</td>
+        <td><label for="select4"></label>
+          <select name="select4">
+            <option {% if data.cmjobtype == "parttime" %} selected {% endif %}>parttime</option>
+            <option {% if data.cmjobtype == "fulltime" %} selected {% endif %}>fulltime</option>
+          </select> </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">SALARY</td>
+        <td><input type="text" name="textfield3" value="{{data.cmsalary}}"/></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">WORKING HOURS </td>
+        <td><select name="select5">
+          <option {% if data.cmworkinghrs == "0-8" %} selected {% endif %}  >0-8</option>
+          <option {% if data.cmworkinghrs == "0-6" %} selected {% endif %}>0-6</option>
+          <option {% if data.cmworkinghrs == "0-10" %} selected {% endif %}>0-10</option>
+        </select>        </td>
+      </tr>
+      <tr>
+        <td colspan="3"><p>&nbsp;</p>
+          <p align="center" style="color:black;">REQUIREMENTS</p></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">QUALIFICATION</td>
+        <td><label for="select2"></label>
+          <p>
+            <select name="select2" id="select2">
+              <option {% if data.cmqualification == "DIPLOMA" %} selected {% endif %}>DIPLOMA</option>
+              <option {% if data.cmqualification == "GRADUATION" %} selected {% endif %}>GRADUATION</option>
+              <option {% if data.cmqualification == "POSTGRADUATION" %} selected {% endif %}>POST GRADUATION</option>
+              <option {% if data.cmqualification == "ITI" %} selected {% endif %}>ITI</option>
+            </select>
+          </p>        </td>
+      </tr>
+	  
+      <tr>
+        <td colspan="3">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="3"><table width="1008" border="1">
+          <tr>
+            <td width="153" style="color:black;">BRANCHS NEEDED </td>
+            <td width="183"><p><strong>MBA</strong></p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="HR" {% if "HR" in data.cmbranches %} checked {% endif %}/>
+                HR</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="FINANCE" {% if "FINANCE" in data.cmbranches %} checked {% endif %} />
+                FINANCE</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="MARKETING" {% if "MARKETING" in data.cmbranches %} checked {% endif %} />
+                MARKETING</p>
+              <p><strong>BTECH</strong></p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="MECHANICAL" {% if "MECHANICAL" in data.cmbranches %} checked {% endif %} />
+                MECHANICAL </p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="CIVIL" {% if "CIVIL" in data.cmbranches %} checked {% endif %} />
+                CIVIL</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value=CS/IT" {% if "CS/IT" in data.cmbranches %} checked {% endif %} />
+                CS/IT</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="EC" {% if "EC" in data.cmbranches %} checked {% endif %} />
+                EC</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="EEE" {% if "EEE" in data.cmbranches %} checked {% endif %} />
+                EEE</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="AERONOTICAL" {% if "AERONOTICAL" in data.cmbranches %} checked {% endif %} />
+                AERONOTICAL </p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="FOOD PROCESSING" {% if "FOOD PROCESSING" in data.cmbranches %} checked {% endif %} />
+                FOOD PROCESSING</p>
+              <p>&nbsp;</p>              </td>
+            <td width="228"><p><strong>MTECH</strong></p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="MASTERS (CS/IT)" {% if "MASTERS (CS/IT)" in data.cmbranches %} checked {% endif %} />
+                CS/IT</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="MASTERS MECH" {% if "MASTERS MECH" in data.cmbranches %} checked {% endif %} />
+                MECH</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="MASTERS CIVIL" {% if "MASTERS CIVIL" in data.cmbranches %} checked {% endif %} />
+                CIVIL</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="MASTERS EC" {% if "MASTERS EC" in data.cmbranches %} checked {% endif %} />
+                EC</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="MASTERS AERONOTICAL" {% if "MASTERS AERONOTICAL" in data.cmbranches %} checked {% endif %} />
+                AERONOTICAL</p>
+              <p><strong>DIPLOMA COURCES</strong></p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="DIPLOMA ME" {% if "DIPLOMA ME" in data.cmbranches %} checked {% endif %} />
+                ME </p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="DIPLOMA EE" {% if "DIPLOMA EE" in data.cmbranches %} checked {% endif %} />
+                EE</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="DIPLOMA CE" {% if "DIPLOMA CE" in data.cmbranches %} checked {% endif %} />
+                CE</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="DIPLOMA (CS/IT)" {% if "DIPLOMA (CS/IT)" in data.cmbranches %} checked {% endif %} />
+                CS/IT</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="DIPLOMA PETROLEUM" {% if "DIPLOMA PETROLEUM" in data.cmbranches %} checked {% endif %} />
+                PETROLEUM</p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="DIPLOMA AUTOMOBILE" {% if "DIPLOMA AUTOMOBILE" in data.cmbranches %} checked {% endif %} />
+              AUTOMOBILE</p></td>
+            <td width="416"><p>
+              <input type="checkbox" name="checkbox8" value="OTHER" {% if "OTHER" in data.cmbranches %} checked {% endif %} />
+              OTHER COURSES (BSC MSC COURCES INCLUDED) </p>
+              <p>
+                <input type="checkbox" name="checkbox8" value="MCA" {% if "OTHER" in data.cmbranches %} checked {% endif %} />
+                MCA
+  <input type="checkbox" name="checkbox8" value="BBA" {% if "BBA" in data.cmbranches %} checked {% endif %} />
+                BBA
+  <input type="checkbox" name="checkbox8" value="BCA" {% if "BCA" in data.cmbranches %} checked {% endif %} />
+                BCA
+  <input type="checkbox" name="checkbox8" value="BCOM" {% if "BCOM" in data.cmbranches %} checked {% endif %} />
+              BCOM</p></td>
+          </tr>
+        </table></td>
+      </tr>
+      
+      
+      <tr>
+        <td colspan="2">&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">PERCENTAGE/SGPA</td>
+        <td><label for="select3"></label>
+          <label for="select6"></label>
+          <label for="select6"></label>
+          <select name="select6" id="select6">
+            <option {% if data.cmpercentage == "3.00-4.00" %} selected {% endif %}>3.00-4.00</option>
+            <option {% if data.cmpercentage == "4.00-5.00" %} selected {% endif %}>4.00-5.00</option>
+            <option {% if data.cmpercentage == "5.00-6.00" %} selected {% endif %}>5.00-6.00</option>
+            <option {% if data.cmpercentage == "6.00-7.00" %} selected {% endif %}>6.00-7.00</option>
+            <option {% if data.cmpercentage == "7.00-8.00" %} selected {% endif %}>7.00-8.00</option>
+            <option {% if data.cmpercentage == "8.00-9.00" %} selected {% endif %}>8.00-9.00</option>
+            <option {% if data.cmpercentage == "9.00-10.00" %} selected {% endif %}>9.00-10.00</option>
+          </select></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">YEAR OF PASSING</td>
+        <td><label for="select3"></label>
+          <select name="select3" id="select3">
+            <option {% if data.cyearofpass == "2010-2012" %} selected {% endif %}>2010-2012</option>
+            <option {% if data.cyearofpass == "2012-2014" %} selected {% endif %}>2012-2014</option>
+            <option {% if data.cyearofpass == "2014-2016" %} selected {% endif %}>2014-2016</option>
+            <option {% if data.cyearofpass == "2016-2018" %} selected {% endif %}>2016-2018</option>
+            <option {% if data.cyearofpass == "2019..." %} selected {% endif %}>2019...</option>
+          </select></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">BACK LOGS</td>
+        <td><label for="select7"></label>
+          <select name="select7" id="select7">
+            <option {% if data.cbacklogs == "0" %} selected {% endif %} >0</option>
+            <option {% if data.cbacklogs == "1" %} selected {% endif %}>1</option>
+            <option {% if data.cbacklogs == "2" %} selected {% endif %} >2</option>
+            <option {% if data.cbacklogs == "3" %} selected {% endif %} >3</option>
+            <option  {% if data.cbacklogs == "4" %} selected {% endif %}>4</option>
+            <option {% if data.cbacklogs == "5" %} selected {% endif %}>5</option>
+            <option {% if data.cbacklogs == "6" %} selected {% endif %} >6</option>
+            <option {% if data.cbacklogs == "7" %} selected {% endif %} >7</option>
+            <option {% if data.cbacklogs == "OTHERS" %} selected {% endif %} >OTHERS</option>
+          </select></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">AGE GROUP</td>
+        <td><label for="select9"></label>
+          <select name="select9" id="select9">
+            <option {% if data.cmage == "18-20" %} selected {% endif %} >18 - 20</option>
+            <option {% if data.cmage == "20-22" %} selected {% endif %}>20-22</option>
+            <option {% if data.cmage == "22-24" %} selected {% endif %}>22-24</option>
+            <option {% if data.cmage == "24-26" %} selected {% endif %}>24-26</option>
+            <option {% if data.cmage == "26-28" %} selected {% endif %}>26-28</option>
+            <option {% if data.cmage == "28-30" %} selected {% endif %}>28-30</option>
+            <option {% if data.cmage == "30-32" %} selected {% endif %}>30-32</option>
+          </select></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">GENDER</td>
+        <td><select name="select14">
+          <option {% if data.cmgender == "MALE" %} selected {% endif %}>MALE</option>
+          <option {% if data.cmgender == "FEMALE" %} selected {% endif %}>FEMALE</option>
+          <option {% if data.cmgender == "ANY" %} selected {% endif %}>ANY</option>
+        </select>        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">MARITIAL STATUS </td>
+        <td><select name="select13">
+          <option {% if data.cmmartial == "YES" %} selected {% endif %}>YES</option>
+          <option {% if data.cmmartial == "NO" %} selected {% endif %}>NO</option>
+        </select>        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color:black;">EXPERIENCE</td>
+        <td><label for="select8"></label>
+          <select name="select8" id="select8">
+            <option {% if data.cmexperience == "0" %} selected {% endif %}>0</option>
+            <option {% if data.cmexperience == "1" %} selected {% endif %}>1</option>
+            <option {% if data.cmexperience == "2" %} selected {% endif %}>2</option>
+            <option {% if data.cmexperience == "3" %} selected {% endif %}>3</option>
+            <option {% if data.cmexperience == "4" %} selected {% endif %}>4</option>
+            <option {% if data.cmexperience == "5+" %} selected {% endif %}>5+</option>
+          </select></td>
+      </tr>
+      <tr>
+        <td colspan="2"style="color:black;">LANGUAGE KNOWN</td>
+        <td><label for="select4"></label>
+          <select name="select99" id="select4">
+            <option {% if data.cmlanguage1 == "ENGLISH" %} selected {% endif %}>ENGLISH</option>
+            <option {% if data.cmlanguage1 == "HINDI" %} selected {% endif %}>HINDI</option>
+            <option {% if data.cmlanguage1 == "MALAYALAM" %} selected {% endif %}>MALAYALAM</option>
+            <option {% if data.cmlanguage1 == "TAMIL" %} selected {% endif %}>TAMIL</option>
+            <option {% if data.cmlanguage1 == "TELUGU" %} selected {% endif %}>TELUGU</option>
+            <option {% if data.cmlanguage1 == "KANNADA" %} selected {% endif %}>KANNADA</option>
+          </select>
+          <label for="select5"></label>
+          <select name="select98" id="select5">
+            <option {% if data.cmlanguage2 == "ENGLISH" %} selected {% endif %}>ENGLISH</option>
+            <option {% if data.cmlanguage2 == "HINDI" %} selected {% endif %}>HINDI</option>
+            <option {% if data.cmlanguage2 == "MALAYALAM" %} selected {% endif %}>MALAYALAM</option>
+            <option {% if data.cmlanguage2 == "TAMIL" %} selected {% endif %}>TAMIL</option>
+            <option {% if data.cmlanguage2 == "TELUGU" %} selected {% endif %}>TELUGU</option>
+            <option {% if data.cmlanguage2 == "KANNADA" %} selected {% endif %}>KANNADA</option>
+          </select>
+          <label for="select6"></label></td>
+      </tr>
+      <tr>
+        <td colspan="3"><p>&nbsp;</p>
+        <p align="center"style="color:black;">PLACEMENT PROCESS </p></td>
+      </tr>
+      <tr>
+        <td colspan="3"><p align="left">&nbsp;</p>
+          <p align="left" style="color:black;">REQUIRED DOCUMENTS :  </p>
+          <p align="left" style="color:black;">
+            <input type="checkbox" name="checkbox12" value="ORIGINAL EDUCATION CERTIFICATES" {% if "ORIGINAL EDUCATION CERTIFICATES" in data.cmbranches %} checked {% endif %} />
+            ORIGINAL EDUCATION CERTIFICATES </p>
+          <p align="left" style="color:black;">
+            <input type="checkbox" name="checkbox12" value="PHOTO" {% if "PHOTO" in data.cmreqdocs %} checked {% endif %} />
+          PHOTO</p>
+          <p align="left" style="color:black;">
+            <input type="checkbox" name="checkbox12" value="ID CARD" {% if "ID CARD" in data.cmreqdocs %} checked {% endif %} />
+          ID CARD </p>
+          <p align="left" style="color:black;">
+            <input type="checkbox" name="checkbox12" value="PAN CARD" {% if "PAN CARD" in data.cmreqdocs %} checked {% endif %} />
+          PAN CARD </p>
+          <p align="left" style="color:black;">
+            <input type="checkbox" name="checkbox12" value="EXPERIENCE CERTIFICATES (IF AVAILABLE)" {% if "EXPERIENCE CERTIFICATES (IF AVAILABLE)" in data.cmreqdocs %} checked {% endif %} />
+          EXPERIENCE CERTIFICATES (IF AVAILABLE)</p>
+          <p align="left" style="color:black;">
+            <input type="checkbox" name="checkbox12" value="OTHER COURSE CERTIFICATES (IF ANY)" {% if "OTHER COURSE CERTIFICATES (IF ANY)" in data.cmreqdocs %} checked {% endif %} />
+            OTHER COURSE CERTIFICATES (IF ANY)</p>          
+          <p align="left" >&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td width="218" style="color:black;">CONDUCTING DATE </td>
+        <td width="211"><label>
+          <input type="Date" name="textfield4" value="{{data.cmdate}}"/>
+        </label></td>
+        <td style="color:black;">TIME :
+          <select name="select11">
+            <option {% if data.cmtime == "8.00AM" %} selected {% endif %}>8.00AM</option>
+            <option {% if data.cmtime == "9.00AM" %} selected {% endif %}>9.00AM</option>
+            <option {% if data.cmtime == "10.00AM" %} selected {% endif %}>10.00AM</option>
+            <option {% if data.cmtime == "11.00AM" %} selected {% endif %}>11.00AM</option>
+            <option {% if data.cmtime == "12.00PM" %} selected {% endif %}>12.00PM</option>
+            <option {% if data.cmtime == "1.00PM" %} selected {% endif %}>1.00PM</option>
+            <option {% if data.cmtime == "2.00PM" %} selected {% endif %}>2.00PM</option>
+            <option {% if data.cmtime == "3.00PM" %} selected {% endif %}>3.00PM</option>
+            <option {% if data.cmtime == "4.00PM" %} selected {% endif %}>4.00PM</option>
+            <option {% if data.cmtime == "5.00PM" %} selected {% endif %}>5.00PM</option>
+          </select></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><div align="center">
+          <p>&nbsp;            </p>
+          <p>
+            <input type="submit" name="Submit" value="UPDATE" />
+            </p>
+        </div></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </form>
+  <p>&nbsp;</p>
+</div>
+{% endblock %}

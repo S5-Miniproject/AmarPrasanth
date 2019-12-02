@@ -1,0 +1,27 @@
+{% extends 'indexcompany (2).html' %}
+{% block body %}
+<div align="center" style="color:black;"><font size="6"> SELECTED CANDIDATES</font>
+  <table width="1216" height="95" border="1">
+    <tr>
+      <td style="color:black;">TITLE</td>
+      <td style="color:black;">LOCATION</td>
+      <td style="color:black;">TYPE</td>
+      <td style="color:black;">SALARY</td>
+      <td style="color:black;">WORKING HOUR</td>
+      <td style="color:black;">QUALIFICATION</td>
+      <td style="color:black;">VIEW PROFILE</td>
+    </tr>
+    {% for dt in data %}
+    <tr>
+      <td style="color:black;">{{dt.cmtitle}}</td>
+      <td style="color:black;">&nbsp;{{dt.cmlocation}}</td>
+      <td style="color:black;">{{dt.cmjobtype}}&nbsp;</td>
+      <td style="color:black;">{{dt.cmsalary}}</td>
+      <td style="color:black;">&nbsp;{{dt.cmworkinghrs}}</td>
+      <td style="color:black;">&nbsp;{{dt.cmqualification}}</td>
+      <td style="color:black;"><a href="{% url 'plc:viewcandidates' dt.cmid %}">VIEW CANDIDATES</a></td>
+    </tr>
+     {% endfor %}
+  </table>
+</div>
+{% endblock %}

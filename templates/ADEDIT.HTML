@@ -1,0 +1,28 @@
+{% extends 'indexadmins.html' %}
+{% block body %}
+
+<div align="center">
+  <p style="color:black;"><font size="10"> EDIT LIST </font></p>
+  </div>
+  <p>&nbsp;  </p>
+<table width="1261" height="55" border="1">
+  <tr>
+      <td style="color:black;">COMPANY</td>
+      <td style="color:black;">CITY</td>
+      <td style="color:black;">STATE</td>
+      <td style="color:black;">MOB.NO</td>
+      <td style="color:black;" ALIGN="center">REMOVE COMPANY</td>
+    </tr>
+    {% for dt in data %}
+  <tr>
+    <td width="228" style="color:black;"><div align="center"></div>{{dt.cname}}</td>
+    <td width="160" style="color:black;"><div align="center"></div>{{dt.ccity}}</td>
+    <td width="216" style="color:black;"><div align="center"></div>{{dt.cstate}}</td>
+    <td width="222" style="color:black;"><div align="center"></div>{{dt.ccmpno}}</td>
+    <td width="401" style="color:black;"><div align="center"><a href="{% url 'plc:deletecomp' dt.login_id.id %}">DELETE</a></div></td>
+  </tr>
+  {% endfor %}
+</table>
+<p>&nbsp;</p>
+
+ {% endblock %}

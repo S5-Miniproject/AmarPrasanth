@@ -1,0 +1,34 @@
+{% extends 'indexadmins.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="{% url 'plc:viewalloteds' %}">
+  {% csrf_token %}
+  <label>COMPANY
+  <select name="select">
+    {% for dt in data %}
+    <option value="{{ dt.login_id.id}}">{{ dt.cname}}</option>
+     {% endfor %}
+  </select>
+  </label>
+    <label> 
+    <input type="submit" name="Submit" value="Submit" />
+    </label>
+  <p>&nbsp;</p>
+    <table width="668" height="88" border="1">
+      <tr>
+        <td style="color:black;">STUDENT NAME </td>
+        <td style="color:black;">EMAIL</td>
+        <td style="color:black;">mob no</td>
+        <td style="color:black;">PLACE</td>
+      </tr>
+      {% for dt in data2 %}
+      <tr>
+        <td style="color:black;">{{dt.stidd__sfirstname}}</td>
+        <td style="color:black;"> {{dt.stidd__smail}}</td>
+        <td style="color:black;">{{ dt.stidd__snumber }}</td>
+        <td style="color:black;">{{dt.stidd__saddress}}</td>
+      </tr>
+       {% endfor %}
+    </table>
+    <p>&nbsp;</p>
+</form>
+{% endblock %}
